@@ -108,7 +108,7 @@ SELECT
     SUBSTRING_INDEX(SUBSTRING_INDEX(category, '|', 2), '|', -1) as sub_category,
     product_name
 FROM products
-ORDER BY 1, 2, 3
+ORDER BY 1, 2, 3;
 ```
 
 | main_category           | sub_category              | product_name |
@@ -125,7 +125,7 @@ SELECT
 	COUNT(DISTINCT product_name) as unique_products,
     COUNT(DISTINCT category) as unique_category,
     COUNT(DISTINCT user_id) as unique_reviewers
-FROM products
+FROM products;
 ```
 
 | unique_products | unique_category | unique_reviewers |
@@ -143,7 +143,7 @@ SELECT
     ROUND(AVG(actual_price_num),2) as avg_actual_price,
     ROUND(AVG(discount_pct_num),2) as avg_discount,
     ROUND(AVG(rating_num),2) as avg_rating
-FROM products
+FROM products;
 ```
 
 | total_products | avg_discounted_price | avg_actual_price | avg_discount | avg_rating |
@@ -161,7 +161,7 @@ SELECT
 	COUNT(product_name) as product_count
 FROM products
 GROUP BY main_category
-ORDER BY product_count DESC
+ORDER BY product_count DESC;
 ```
 
 Find average price of products for each category
@@ -171,5 +171,35 @@ SELECT
     ROUND(AVG(discounted_price_num),2) as avg_price
 FROM products
 GROUP BY main_category
-ORDER BY avg_price DESC
+ORDER BY avg_price DESC;
+```
+
+---
+
+## Top N Bottom N Analysis
+
+Find Top 5 Products with the highest rating (product credibility criteria is `>= 5000` ratings)
+```sql
+SELECT
+	product_name,
+    rating_num,
+    rating_count_num
+FROM products
+where rating_count_num > 5000
+GROUP BY product_name, rating_num, rating_count_num
+ORDER BY rating_num DESC, rating_count_num DESC
+LIMIT 5;
+```
+
+Find Bottom 10 Products with the lowest ratings (same credibility criteria)
+```sql
+SELECT
+	product_name,
+    rating_num,
+    rating_count_num
+FROM products
+where rating_count_num > 5000
+GROUP BY product_name, rating_num, rating_count_num
+ORDER BY rating_num ASC, rating_count_num DESC
+LIMIT 10;
 ```
