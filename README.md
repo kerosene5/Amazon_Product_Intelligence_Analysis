@@ -5,7 +5,7 @@
 ![Records](https://img.shields.io/badge/Records-1%2C465-brightgreen?style=flat)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=flat)
 
-> A structured SQL-based analysis of 1,465 Amazon India products where I explore pricing, discounts, ratings, and category performance using EDA and Advanced Analytics techniques.
+> A structured SQL-based analysis of 1,337 Amazon India products where I explore pricing, discounts, ratings, and category performance using EDA and Advanced Analytics techniques.
 
 ## Objective
 
