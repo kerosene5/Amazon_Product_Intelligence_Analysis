@@ -1,6 +1,6 @@
 # Overview
 
-Hi there! I made this project to understand Data Analytics (Exploratory Data Analysis, Advanced Analytics) and SQL!
+Hi there! 
 
 I have followed this mind map as I went about my analysis:
 
@@ -9,3 +9,20 @@ I have followed this mind map as I went about my analysis:
 --- 
 
 The dataset used is the [Amazon Sales Dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) on Kaggle. This dataset contains the data of 1000+ Amazon Product ratings and reviews as per their details listed on [amazon.in](https://www.amazon.in/)
+
+# Exploratory Data Analysis
+
+Let us proceed with the EDA of the dataset to get a thorough feel and familiarize ourselves with the data!
+
+## Database Exploration
+
+So, since this is a completely new dataset and we have no idea what we're in for, 
+we first perform Database Exploration to understand what tables there are in the database (in this case, there is only 1 table).
+
+ ```sql
+SELECT * FROM INFORMATION_SCHEMA.TABLES
+```
+
+ ```sql
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+```
