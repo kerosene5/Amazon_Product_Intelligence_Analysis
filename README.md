@@ -1,5 +1,10 @@
 # Overview
 
-Hi there! I made this project to familiarize myself with the role of a BI Engineer and Data Analyst, as well as to understand SQL on a greater level.
+Hi there! I made this project to understand Data Analytics (Exploratory Data Analysis, Advanced Analytics) and SQL!
 
-The [dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) I used has been sourced from Kaggle. 
+I have followed this mind map as i went about my analysis:
+
+<img width="1789" height="879" alt="image" src="https://github.com/user-attachments/assets/8008fb3b-d496-4e1f-9539-261bcf3837b4" />
+
+
+The dataset used is the [Amazon Sales Dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) on Kaggle. This dataset contains the data of 1K+ Amazon Product ratings and reviews as per their details listed on the official website of Amazon
