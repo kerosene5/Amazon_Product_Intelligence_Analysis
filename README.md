@@ -98,3 +98,43 @@ WHERE TABLE_SCHEMA = 'amazon_sales';
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'products';
 ```
+---
+
+## Dimension Exploration
+
+ ```sql
+SELECT DISTINCT
+	category,
+    product_name
+    discounted_price,
+    rating,
+    rating_count
+FROM products
+ORDER BY 1, 2
+```
+
+```sql
+SELECT 
+	COUNT(DISTINCT product_name) as unique_products,
+    COUNT(DISTINCT category) as unique_category,
+    COUNT(DISTINCT user_id) as unique_reviewers
+FROM products
+```
+
+---
+
+## Measures Exploration
+
+```sql
+SELECT
+	COUNT(*) as total_products,
+	ROUND(AVG(discounted_price_num),2) as avg_discounted_price,
+    ROUND(AVG(actual_price_num),2) as avg_actual_price,
+    ROUND(AVG(discount_pct_num),2) as avg_discount,
+    ROUND(AVG(rating_num),2) as avg_rating
+FROM products
+```
+
+| total_products | avg_discounted_price | avg_actual_price | avg_discount | avg_rating |
+|---------------|---------------------|------------------|--------------|------------|
+| 1465          | 3125.31             | 5444.99          | 47.69        | 4.10       |
