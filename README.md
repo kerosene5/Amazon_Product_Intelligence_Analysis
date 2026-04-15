@@ -90,9 +90,11 @@ So, since this is a completely new dataset and we have no idea what we're in for
 we first perform Database Exploration to understand what tables there are in the database (in this case, there is only 1 table).
 
  ```sql
-SELECT * FROM INFORMATION_SCHEMA.TABLES
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_SCHEMA = 'amazon_sales';
 ```
 
  ```sql
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'products';
 ```
