@@ -103,15 +103,22 @@ WHERE TABLE_NAME = 'products';
 ## Dimension Exploration
 
  ```sql
-SELECT DISTINCT
-	category,
+SELECT
+	SUBSTRING_INDEX(category, '|', 1) as main_category,
+    SUBSTRING_INDEX(SUBSTRING_INDEX(category, '|', 2), '|', -1) as sub_category,
     product_name
-    discounted_price,
-    rating,
-    rating_count
 FROM products
-ORDER BY 1, 2
+ORDER BY 1, 2, 3
 ```
+
+| main_category           | sub_category              | product_name |
+|------------------------|--------------------------|--------------|
+| Car&Motorbike          | CarAccessories           | Refair AX30 [MAX] Portable Air Purifier for Car, ... |
+| Computers&Accessories  | Accessories&Peripherals  | Agaro Blaze USBA to micro +Type C 2in1 Braide... |
+| Computers&Accessories  | Accessories&Peripherals  | AirCase Protective Laptop Bag Sleeve fits Upto ... |
+| ...                    | ...                      | ...          |
+
+---
 
 ```sql
 SELECT 
@@ -142,3 +149,27 @@ FROM products
 | total_products | avg_discounted_price | avg_actual_price | avg_discount | avg_rating |
 |---------------|---------------------|------------------|--------------|------------|
 | 1465          | 3125.31             | 5444.99          | 47.69        | 4.10       |
+
+
+## Magnitude Exploration
+
+Find number of products of each category
+
+```sql
+SELECT
+	SUBSTRING_INDEX(category, '|', 1) as main_category,
+	COUNT(product_name) as product_count
+FROM products
+GROUP BY main_category
+ORDER BY product_count DESC
+```
+
+Find average price of products for each category
+```sql
+SELECT
+	SUBSTRING_INDEX(category, '|', 1) as main_category,
+    ROUND(AVG(discounted_price_num),2) as avg_price
+FROM products
+GROUP BY main_category
+ORDER BY avg_price DESC
+```
