@@ -121,6 +121,10 @@ SELECT
 FROM products
 ```
 
+| unique_products | unique_category | unique_reviewers |
+|-----------------|----------------|------------------|
+| 1337            | 211            | 1194             |
+
 ---
 
 ## Measures Exploration
