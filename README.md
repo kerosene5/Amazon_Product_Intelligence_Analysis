@@ -2,7 +2,7 @@
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)
 ![Dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=flat&logo=kaggle&logoColor=white)
-![Records](https://img.shields.io/badge/Records-1%2C465-brightgreen?style=flat)
+![Records](https://img.shields.io/badge/Records-1%2C337-brightgreen?style=flat)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=flat)
 
 > A structured SQL-based analysis of 1,337 Amazon India products where I explore pricing, discounts, ratings, and category performance using EDA and Advanced Analytics techniques.
