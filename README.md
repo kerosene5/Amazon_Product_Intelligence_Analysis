@@ -102,6 +102,8 @@ WHERE TABLE_NAME = 'products';
 
 ## Dimension Exploration
 
+First, let's explore all categories and subcategories our products are in
+
  ```sql
 SELECT
 	SUBSTRING_INDEX(category, '|', 1) as main_category,
@@ -120,6 +122,8 @@ ORDER BY 1, 2, 3;
 
 ---
 
+Let's find the total number of unique categories, products and reviewers
+
 ```sql
 SELECT 
 	COUNT(DISTINCT product_name) as unique_products,
@@ -135,6 +139,10 @@ FROM products;
 ---
 
 ## Measures Exploration
+
+Let's get insights on the total number of products, the average prices (discounted and actual) and the average discount %.
+
+Let's include the average rating across all products as well.
 
 ```sql
 SELECT
